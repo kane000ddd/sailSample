@@ -21,7 +21,7 @@ class RegisterdListener
         $this->eloquent = $eloquent;
     }
 
-    public function handle(Registerd $event)
+    public function handle(Registered $event)
     {
         $user = $this->eloquent->findOrFail($event->user->getAuthIdentifier());
         $this->mailer->raw('会員登録完了しました', function ($message) use ($user){
